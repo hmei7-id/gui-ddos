@@ -454,9 +454,13 @@ class HTTP2FloodGUI(QMainWindow):
 
         elapsed = time.time() - self.stats["start_time"]
         if elapsed > 0:
-            rps = self.stats["requests_sent"] / elapsed
-            self.rps_label.setText(f"{rps:.2f}")
-            # update graph
+            # ambil langsung dari spinbox rate_input
+            if hasattr(self, "rate_input"):
+                rps = self.rate_input.value()
+            else:
+                rps = 0
+
+            self.rps_label.setText(str(rps))
             self.graph_counter += 1
             self.rps_data.append(rps)
             self.rps_time.append(self.graph_counter)
