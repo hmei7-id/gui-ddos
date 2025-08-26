@@ -495,7 +495,7 @@ class HTTP2FloodGUI(QMainWindow):
         lbl_duration.setFont(QFont("Arial", 11, QFont.Bold))
         input_layout.addWidget(lbl_duration, 1, 0)
         self.duration_input = QSpinBox()
-        self.duration_input.setRange(1, 7200)
+        self.duration_input.setRange(1, 1000000)
         self.duration_input.setValue(60)
         input_layout.addWidget(self.duration_input, 1, 1, 1, 2)
 
@@ -585,7 +585,7 @@ class HTTP2FloodGUI(QMainWindow):
         lbl_jstime.setFont(QFont("Arial", 11, QFont.Bold))
         js_grid.addWidget(lbl_jstime, 1, 0)
         self.js_time_input = QSpinBox()
-        self.js_time_input.setRange(1, 7200)
+        self.js_time_input.setRange(1, 1000000)
         self.js_time_input.setValue(60)
         js_grid.addWidget(self.js_time_input, 1, 1, 1, 2)
 
@@ -1452,7 +1452,7 @@ class ProxyScraperWorker(QThread):
         if self.worker:
             self.worker.stop()
             self.worker.quit()
-            self.worker.wait(2000)
+            self.worker.wait(0.1)
             self.worker.deleteLater()
             self.worker = None
 
@@ -1629,4 +1629,3 @@ if __name__ == "__main__":
     window = HTTP2FloodGUI()
     window.show()
     sys.exit(app.exec_())
-
