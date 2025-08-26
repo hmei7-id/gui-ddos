@@ -1,4 +1,4 @@
-# HTTP/2 Flood Attack Tool - Premium Edition
+# HTTP/2 Flood Attack Tool - Premium Edition (GUI ONLY/WSL)
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![PyQt5](https://img.shields.io/badge/PyQt5-5.15.9-green)
