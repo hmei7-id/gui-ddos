@@ -1,0 +1,7 @@
+{
+  "theme": "Dark",
+  "default_threads": 1,
+  "default_rate": 64,
+  "default_time": 300,
+  "autosave_log": true
+}
